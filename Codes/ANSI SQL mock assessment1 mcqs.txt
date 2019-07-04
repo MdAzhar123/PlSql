@@ -1,0 +1,27 @@
+1.Please read the question carefully and choose the most appropriate option. The CUSTOMERS table has these columns:
+CUSTOMER_ID NUMBER(4) NOT NULL 
+        
+CUSTOMER_NAME VARCHAR2(100) NOT NULL
+        STREET_ADDRESS VARCHAR2(150)
+        
+CITY_ADDRESS VARCHAR2(50)
+
+       STATE_ADDRESS VARCHAR2(50)
+       
+PROVINCE_ADDRESS VARCHAR2(50)
+
+       COUNTRY_ADDRESS VARCHAR2(50)
+
+       POSTAL_CODE VARCHAR2(12)
+
+       CUSTOMER_PHONE VARCHAR2(20).
+
+A  sale is being advertised to the customers in France. Which WHERE clause
+identifies customers that are located in France?
+
+a.None
+b.WHERE lower(country_address) = "france"
+c.WHERE lower(country_address) IS 'france'
+d.WHERE lower(country_address) = 'france'
+
+

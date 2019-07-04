@@ -1,0 +1,12 @@
+A certain electricity board offers the following rates to its consumers based on
+units consumed.
+Units			Rate/unit
+1st 100			Rs.5
+2nd 100			Rs.6
+3rd 100			Rs.7
+>300			Rs.8
+
+Create an anonymous block that retreives meter readings of the previous & the current months
+from the table electricity_bill based on consumer no as input and calculates and prints
+the total number of units consumed and the total charge.
+

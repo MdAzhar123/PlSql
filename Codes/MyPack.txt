@@ -1,0 +1,32 @@
+--Creating the package specification
+create or replace package MyPack
+is
+--Giving the specification of the procedure
+--PrcRetreiveEmpCountByYear
+  procedure PrcRetreiveEmpCountByYear
+(
+  v_joining_month employees.first_name%type,
+  v_emp_count out integer
+);
+
+--Giving the specification of the procedure
+--PrcCaller
+ procedure PrcCaller
+(
+   v_joining_month employees.first_name%type
+);
+
+
+
+--Giving the specification of the function
+--FxCalculateTotCharge
+function FxCalculateTotCharge
+(
+  v_units in electricity_bill.units%type
+)
+return electricity_bill.tot_charge%type;
+
+end MyPack;
+
+
+   

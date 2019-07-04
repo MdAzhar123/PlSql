@@ -1,0 +1,28 @@
+Syntax of if else in PL/SQL
+ 
+if condition
+ then statement;
+elsif condition
+ then statement;
+elsif contition;
+ then statement;
+else
+  statement;
+end if;
+
+loop
+ statement1;
+ statement2;
+end loop;
+
+while condition
+ loop
+   statement1;
+   statement2;
+end loop;
+
+for variable_name [reverse] in initial_value..final_value
+  loop
+   tatement1;
+   statement2;
+end loop;

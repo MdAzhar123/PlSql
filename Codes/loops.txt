@@ -1,0 +1,13 @@
+loops
+   1. Simple loop
+   2. while loop
+   3. for loop
+
+   Simple loop
+    Syntax
+       loop
+        statement1;
+        statement2;
+        [exit when condition];
+       statement3;
+      end loop;

@@ -1,0 +1,14 @@
+Looping constructs
+-------
+
+1. loop---end loop;
+2. while--loop---end loop;
+3. for loop
+
+1. Syntax
+   loop
+     statement1;
+     statement2;
+     [exit];
+     statement3;
+   end loop;

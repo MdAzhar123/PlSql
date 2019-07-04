@@ -1,0 +1,31 @@
+type auth_cursor is ref cursor 
+return author%rowtype;
+ c2 auth_cursor;
+ r_c2 c2%rowtype;
+
+ function get_departments return auth_cursor
+ is
+ c1 dept_cursor;
+ begin
+ open c1 for select * from departments;
+ return c1;
+ end;
+
+ procedure print_name (c3 in out dept_cursor)
+ as
+ r_c3 departments%rowtype;
+ begin
+ loop
+ fetch c3 into r_c3;
+ exit when c3%notfound;
+ dbms_output.put_line(
+initcap(r_c3.department_name));
+ end loop;
+ end;
+24
+25 begin
+26 c2 := get_auth;
+27 print_name(c2);
+28 close c2;
+29 end;
+30 /

@@ -1,0 +1,43 @@
+create table accounts_master
+(
+  ac_no integer primary key,
+  name varchar2(100) not null,
+  address varchar2(250) not null,
+  balance integer not null
+)
+
+create table accounts_trans
+(
+  ac_no integer,
+  tr_date date,
+  tr_type char(1),
+  tr_amt integer,
+  constraint chk_tr_type check(tr_type in ('D','W')),
+  constraint chk_tr_amt check(tr_amt>=100),
+  constraint fk_ac_no foreign key(ac_no) references accounts_master(ac_no)
+)
+
+insert into accounts_master values
+(1001,'Subodh','Khardah',500000)
+
+insert into accounts_master values
+(1002,'Yasmin','Park Circus',750000)
+
+insert into accounts_master values
+(1003,'Anup','Kolapur',500000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

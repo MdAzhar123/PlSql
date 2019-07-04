@@ -1,0 +1,7 @@
+---Before Statement Trigger
+create or replace trigger TrgBeforeDeleteBill
+before delete on electricity_bill
+
+begin
+  dbms_output.put_line('The delete operation is about to begin...');
+end;

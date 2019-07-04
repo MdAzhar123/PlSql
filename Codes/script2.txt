@@ -1,0 +1,14 @@
+--Outer block
+declare
+   x integer:=2;
+begin
+ --Inner block
+  declare
+   y integer:=4;
+  begin
+   dbms_output.put_line('x='||x);
+   dbms_output.put_line('y='||y);
+end;
+  dbms_output.put_line('y='||y);
+end;
+   

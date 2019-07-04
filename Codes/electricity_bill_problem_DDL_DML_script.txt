@@ -1,0 +1,14 @@
+create table electricity_bill
+(
+  consumer_no integer not null,
+  prev_read integer not null,
+  curr_read integer not null,
+  units integer,
+  tot_charge integer
+)
+
+insert into electricity_bill  values(1001,80,110,null,null)
+insert into electricity_bill  values(1002,80,220,null,null)
+insert into electricity_bill  values(1003,75,330,null,null)
+insert into electricity_bill  values(1004,75,530,null,null)
+

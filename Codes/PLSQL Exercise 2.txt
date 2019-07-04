@@ -1,0 +1,8 @@
+1.
+Refer to the script,employees_leave_DDL_DML_script and create the 2 tables leave_master and
+leave_transaction and insert records into the leave_master table.
+Now define a trigger, such that whenever any employee applies for a leave, a trigger should fire
+that should check if the employee has sufficient leave, requested for.
+An employee cannot apply for more than 3 CL in continuation.
+However, if the employee's leave request is valid an entry is to made into the required table
+and the necessary updation of the alloted leaves should be done, simulateously through the trigger.

@@ -1,0 +1,36 @@
+create table employees
+(
+  employee_id integer primary key,
+  name varchar2(250) not null,
+  address varchar2(500) not null,
+  hire_date date not null,
+  designation varchar2(250) not null,
+  department varchar2(250) not null,
+  salary integer not null
+);
+create table leave_master
+(
+  employee_id integer primary key,
+  pl_alloted integer not null,
+  cl_alloted integer not null,
+  sl_alloted integer not null,
+  constraint fk_employee_id foreign key(employee_id) references employees(employee_id)
+);
+create table leave_transaction
+(
+  employee_id integer,
+  pl_tk integer,
+  pl_start_date date,
+  cl_tk integer, 
+  cl_start_date date
+  sl_tk integer,
+  sl_date date,
+  constraint fk_employee_id1 foreign key(employee_id) references leave_master(employee_id)
+);
+insert into leave_master values(1,18,12,12);
+insert into leave_master values(2,18,12,12);
+insert into leave_master values(3,18,12,12);
+insert into leave_master values(4,18,12,12);
+
+
+

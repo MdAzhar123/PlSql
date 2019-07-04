@@ -1,0 +1,15 @@
+select e.id,e.name,designation,a.tot_lop
+     from employee e join leave_request lr
+     on e.id=lr.employee_id join leave_type lt
+     on lr.leave_type_id=lt.id join
+     
+      (
+        select employee_id,allowed_count-sum(datediff(to_date,from_date)) as tot_lop
+  from leave_request lr1 join leave_type lt1
+  on lr1.leave_type_id=lt1.id join leave_detail_entry lde
+  on lt1.id=lde.leave_type_id
+  and lt1.name='Casual Leave'
+  group by employee_id
+  having tot_lop>0
+  )a
+       on e.id=a.employee_id 

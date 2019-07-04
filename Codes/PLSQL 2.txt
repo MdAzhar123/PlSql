@@ -1,0 +1,142 @@
+1.Carefully read the question and answer accordingly.
+Which are TRUE about calling a function from SQL expressions ? (MO)
+	
+Functions called from: • A SELECT statement cannot contain DML statements 
+	
+Functions called from: An UPDATE or DELETE statement on a table T can query or contain DML on the same table T 
+	
+Functions called from: • A SELECT statement can contain DML statements 
+	
+Functions called from: An UPDATE or DELETE statement on a table T cannot query or contain DML on the same table T 
+
+2.Carefully read the question and answer accordingly.
+Which of the following logically related components can be grouped in a PL/SQL package ? (MO)
+	
+exceptions 
+	
+PL/SQL types 
+	
+procedures 
+	
+functions 
+
+3.Carefully read the question and answer accordingly.
+The functions can return PL/SQL specific data types such as BOOLEAN, RECORD, or TABLE
+	
+TRUE 
+	
+FALSE 
+
+4.Carefully read the question and answer accordingly.
+Which code can you use to ensure that the salary is not increased by more than 10% at a time nor is it ever decreased?
+	
+None of the listed options 
+	
+CREATE OR REPLACE TRIGGER check_sal BEFORE UPDATE OF sal ON emp WHEN (new.sal < old.sal OR new.sal > old.sal * 1.1) BEGIN RAISE_APPLICATION_ERROR ( - 20508, ‘Do not decrease salary not increase by more than 10%’); END; 
+	
+ALTER TABLE emp ADD CONSTRAINT ck_sal CHECK (sal BETWEEN sal AND sal*1.1); 
+	
+CREATE OR REPLACE TRIGGER check_sal AFTER UPDATE OR sal ON emp WHEN (new.sal < old.sal OR -new.sal > old.sal * 1.1) BEGIN RAISE_APPLICATION_ERROR ( - 20508, ‘Do not decrease salary not increase by more than 10%’); END; 
+	
+CREATE OR REPLACE TRIGGER check_sal BEFORE UPDATE OF sal ON emp FOR EACH ROW WHEN (new.sal < old.sal OR new.sal > old.sal * 1.1) BEGIN RAISE_APPLICATION_ERROR ( - 20508, ‘Do not decrease salary not increase by more than 10%’); END; 
+
+5.Carefully read the question and answer accordingly.
+Which of the following sections can be present in an anonymous PL/SQL block?
+	
+Exception 
+	
+All Listed options 
+	
+Declaration 
+	
+Executable 
+
+6.Carefully read the question and answer accordingly.
+Consider the following code segment :
+DECLARE
+      TYPE first_rectype IS RECORD (
+         var1 VARCHAR2(100) := 'Hello World');
+      first_rec first_rectype;
+      TYPE second_rectype IS RECORD
+         (nested_rec first_rectype := first_rec);
+      second_rec second_rectype;
+Begin
+ // ----line1
+End
+Which of the following statement can be fitted at ----line1?
+	
+dbms_output.put_line(second_rec.first_rec.var1); 
+	
+dbms_output.put_line(second_rec.var1); 
+	
+dbms_output.put_line(second_rec.nested_rec.first_rec.var1); 
+	
+dbms_output.put_line(second_rec); 
+	
+dbms_output.put_line(second_rec.nested_rec.var1); 
+
+
+7.Carefully read the question and answer accordingly.
+what are the data dictionary views? (MO)
+	
+USER_SOURCE 
+	
+ALL_SOURCE 
+	
+USER_OBJECTS 
+	
+USER_SOURCES 
+
+
+8.Carefully read the question and answer accordingly.
+You have a row level BEFORE UPDATE trigger on the EMP table. This trigger contains a SELECT statement on the EMP table to ensure that the new salary value falls within the minimum and maximum salary for a given job title. What happens when you try to update a salary value in the EMP table?
+	
+The trigger fails because you cannot use the minimum and maximum functions in a BEFORE UPDATE trigger. 
+	
+The trigger fires successfully. 
+	
+The trigger fails because a SELECT statement on the table being updated is not allowed. 
+	
+The trigger fails because it needs to be a row level AFTER UPDATE trigger. 
+
+9.Carefully read the question and answer accordingly.
+What is the sequence of output of the following code?
+DECLARE
+           TYPE list_of_names_t IS TABLE OF emp.ename%TYPE
+              INDEX BY BINARY_INTEGER;
+           family_mem   list_of_names_t;
+           l_row BINARY_INTEGER;
+        BEGIN
+           family_mem (100) := 'Veena';
+           family_mem (-15) := 'Sheela';
+           family_mem (-30) := 'Syed';
+           family_mem (88) := 'Raji';
+          l_row := family_mem.FIRST;
+          WHILE (l_row IS NOT NULL)
+          LOOP
+             DBMS_OUTPUT.put_line ( family_mem(l_row));
+             l_row := family_mem.NEXT (l_row);
+          END LOOP;
+      END;
+	
+Sheela, Syed, Veena, Raji 
+	
+Raji, Syed, Sheela, Veena 
+	
+Veena, Syed,Sheela,Raji 
+	
+No output is displayed. 
+	
+Syed, Sheela,Raji, Veena 
+
+
+10.Carefully read the question and answer accordingly.
+You need to disable all triggers on the EMPLOYEES table. Which command accomplishes this?
+	
+ALTER TABLE employees DISABLE ALL TRIGGERS; 
+	
+None of these commands; you cannot disable multiple triggers on a table in one command. 
+	
+ALTER employees DISABLE ALL TRIGGERS; 
+	
+ALTER TRIGGERS ON TABLE employees DISABLE; 

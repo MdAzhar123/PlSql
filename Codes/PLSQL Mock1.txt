@@ -1,0 +1,38 @@
+Answer all the questions.
+Duration 2 hours.
+You can take the help of internet.
+----------------------------------------------------------------------------------------------------------------------------
+Create the employees table by running only that portion of the script file, employees_leave_DDL_DML_script,
+which is written to create the table.
+1.       [ 30 ]
+Create a stored procedure by the name PrcInsertEmployeeDetails
+that receives all the detials of an employees as paremeters, except employee id
+and inserts  the details into the employees table. The procedure should be called from an anonymous block
+that should accept these details from the user using substitution variables.The procedure should insert the 
+employee id from  a sequence which should also be created by you.
+On successful insertion of the employee, the procedure should return a confirmation message,
+'The employee details entered successfully, the employee id is <employee id>.
+This message should be received at the calling environment and printed to the user.
+
+2.	[ 20 ]
+Creata a function by the name FxAnnounceBonus
+which should receive salary as parameter
+and calculate the no of years the employee is with the Organization to the nearest integer.
+The Bonus should be calculated on the salary based on the following rules.
+
+Years                 Bonus %
+<1			0
+>=1 and <=5		15%
+Else			30%
+
+The calculated bonus should be returned by the function.
+
+3.	[ 20 ]
+Now refer to the script,employees_leave_DDL_DML_script and create the 2 tables leave_master and
+leave_transaction and insert records into the leave_master table.
+Now define a trigger, such that whenever any employee applies for a leave, a trigger should fire
+that should check if the employee has sufficient leave, requested for.
+An employee cannot apply for more than 3 CL in continuation.
+However, if the employee's leave request is valid an entry is to made into the required table
+and the necessary updation of the alloted leaves should be done, simulateously through the trigger.
+

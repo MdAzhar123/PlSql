@@ -1,0 +1,125 @@
+1.Carefully read the question and answer accordingly.
+Which of the following is used to store the most recently executed SQL statements and the most recently used data definitions?
+	
+Data Pool 
+	
+Data Dictionary Cache 
+	
+Shared Pool 
+	
+Library Cache 
+
+2.Carefully read the question and answer accordingly.
+Which of the following gives the order of Database administrative steps needed to open an Oracle Database?
+	
+Start an instance, Open the Database, Mount the database 
+	
+Start the database, Start the instance, Mount the Database 
+	
+Mount the database, Start the instance, Open the database 
+	
+Start an instance, Mount the database, Open the database 
+
+3.Carefully read the question and answer accordingly.
+A dropped table can be restored by issuing this command.
+FLASHBACK TABLE Supplier TO BEFORE DROP;
+State True or False.
+	
+TRUE 
+	
+FALSE 
+
+
+4.Carefully read the question and answer accordingly.
+Evaluate the CREATE TABLE statement:
+CREATE TABLE products
+(product_id NUMBER(6) CONSTRAINT prod_id_pk PRIMARY KEY,
+product_name VARCHAR2(15));
+Which statement is true regarding the PROD_ID_PK constraint?
+	
+It would be created and would use an automatically created nonunique index. 
+	
+It would be created only if a unique index is manually created first. 
+	
+It would be created and would use an automatically created unique index. 
+	
+It would be created and remains in a disabled state because no index is specified in the command. 
+
+
+5.Carefully read the question and answer accordingly.
+Identify the circumstance under which you will create an Index?
+	
+A column contains a wide range of values. 
+	
+A column contains large number of null values. 
+	
+All of the listed options 
+	
+One or more columns are frequently used together in a where clause or a join condition. 
+	
+The table is large and most queries are expected to retrieve less than 2 to 4 % of the rows. 
+
+
+6.Carefully read the question and answer accordingly.
+Oracle instance comprises of background processes and memory structure. State True or False.
+	
+FALSE 
+	
+TRUE 
+
+
+7.Carefully read the question and answer accordingly.
+You are using the system account to create a synonym as follows:
+ Create synonym User for UserDetails
+Which statements are true with respect to the above synonym?
+	
+A synonym with the name UserDetails is created and only system can access it 
+	
+A synonym with the name UserDetails is created and any user can access it 
+	
+A synonym with the name User is created and any user can access it 
+	
+A synonym with the name User is created and only system can use it 
+	
+Incorrect syntax to create a synonym 
+
+8.Carefully read the question and answer accordingly.
+When Oracle starts an instance, it reads the server parameter file called _______________.
+	
+SPFILE 
+	
+SYSDBA FILE 
+	
+PFile 
+	
+SYSOPER FILE 
+
+
+9.Carefully read the question and answer accordingly.
+Identify the below statement:
+ 
+STATEMENT A : In Oracle 10g the default action of a DROP TABLE command is to move the table to the recycle bin (or rename it), rather than actually dropping it.
+STATEMENT B: PURGE option can be used to permanently drop a table.
+	
+Statement B is true and A is False. 
+	
+Both statement A and B are True. 
+	
+Statement A is true and B is False. 
+	
+Both statements A and B are False. 
+
+
+10.Carefully read the question and answer accordingly.
+The user SCOTT who is the owner of ORDERS and SUPPLIERS tables issues the following GRANT command:
+GRANT ALL
+ON orders, Suppliers TO PUBLIC;
+What correction needs to be done to the above statement?
+	
+WITH GRANT OPTION should be added to the statement. 
+	
+ALL should be replaced with a list of specific privileges. 
+	
+PUBLIC should be replaced with specific usernames. 
+	
+Separate GRANT statements are required for ORDERS and SUPPLIERS tables. 

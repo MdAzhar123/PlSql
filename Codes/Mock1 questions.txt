@@ -1,0 +1,351 @@
+Mock Assessment Questions on Oracle 10g SQL & PL/SQL
+Full Marks : 60
+Duration : 90 minutes
+Instructions :
+Please copy paste the answers in a text file saved by your id followed by your name
+and mail it to me with a CC to Sreedeep.
+
+Section A
+Max Marks : 30
+===================
+Q1.
+What is the use of Library cache?
+a) Contains User information, such as user privileges
+b) Used to store shared SQL
+c) Log of changes made to the database
+d) All of the Mentioned
+
+Q2.
+ Which processes is an instance made of Oracle?
+a) Oracle background processes
+b) Memory processes
+c) Data processes
+d) All of the Mentioned
+
+Q3.
+ Which area of PGA stores binding variables and run-time buffers information?
+a) SQL area
+b) Private SQL area
+c) Stack space
+d) Session area
+
+Q4.
+The ____________ contains a set of tables and views that Oracle uses as a reference to the database.
+a) PGA
+b) Library cache
+c) Data dictionary
+d) SGA
+
+Q5.
+The Oracle environment of database is called as ___________
+a) Database Schema
+b) Database Instances
+c) Data Structure
+d) All of the Mentioned
+
+Q6.
+Which is the smallest unit of storage in an Oracle database?
+a) Data Block
+b) Segment
+c) Extent
+d) Data File
+
+Q7.
+ Oracle database’s design is also called as_____________
+a) Database Abstraction
+b) Database Instance
+c) Database Schema
+d) None of the Mentioned
+
+Q8.
+What are the valid Oracle database schemas?
+a) Logical Schema
+b) Physical Schema
+c) Logical and Physical Schema
+d) None of the Mentioned
+
+Q9.
+What do the schema objects comprise of?
+a) Table
+b) Index
+c) Cluster
+d) All of the Mentioned
+
+Q.10
+A _______________ is used to logically group data together
+a) Database
+b) Tablespace
+c) Datafiles
+d) Object
+
+Q.11
+Create function dept_count(dept_name varchar(20))
+begin
+declare d count integer;
+select count(*) into d count
+from instructor
+where instructor.dept_name= dept_name
+return d count;
+end
+
+Find the error in the the above statement .
+a) Return type missing
+b) Dept_name is mismatched
+c) Reference relation is not mentioned
+d) All of the mentioned
+
+Q.12
+For the function created in Question 1 ,which of the following is a proper select statement ?
+
+a) SELECT dept_name, budget
+FROM instructor
+WHERE dept_COUNT() > 12;
+b) SELECT dept_name, budget
+FROM instructor
+WHERE dept_COUNT(dept name) > 12;
+c) SELECT dept_name, budget
+WHERE dept_COUNT(dept name) > 12;
+d) SELECT dept_name, budget
+FROM instructor
+WHERE dept_COUNT(budget) > 12;
+
+Q.13
+Create procedure dept_count proc(in dept name varchar(20),
+out d count integer)
+begin
+select count(*) into d count
+from instructor
+where instructor.dept name= dept count proc.dept name
+end;
+
+Which of the following is used to call the procedure given above ?
+a) Declare d_count integer;
+b) Declare d_count integer;
+call dept_count proc(’Physics’, d_count);
+c) Declare d_count integer;
+call dept_count proc(’Physics’);
+d) Declare d_count;
+call dept_count proc(’Physics’, d_count);
+
+Q14.
+The CREATE TRIGGER statement is used to create the trigger. 
+THE _____ clause specifies the table name on which the trigger is to be attached. The ______ specifies that this is an AFTER INSERT trigger.
+a) for insert, on
+b) On, for insert
+c) For, insert
+d) None of the mentioned
+
+Q15.
+Which prefixes are available to Oracle triggers?
+A. : new only B. : old only C. Both :new and : old D. Neither :new nor : old
+
+Q16.
+Which of the following is NOT an Oracle-supported trigger?
+A. BEFORE B. DURING C. AFTER D. INSTEAD OF
+
+Q17.
+Observe the syntax given below -
+
+CREATE [OR REPLACE ] TRIGGER trigger_name 
+{BEFORE | AFTER | INSTEAD OF } 
+{INSERT [OR] | UPDATE [OR] | DELETE} 
+[OF col_name] 
+ON table_name 
+[REFERENCING OLD AS o NEW AS n] 
+[FOR EACH ROW] 
+WHEN (condition)  
+DECLARE
+   Declaration-statements
+BEGIN 
+   Executable-statements
+EXCEPTION
+   Exception-handling-statements
+END;
+Which of the following holds true for the [REFERENCING OLD AS o NEW AS n] clause?
+
+A - This allows you to refer new and old values for various DML statements, like INSERT, UPDATE, and DELETE.
+
+B - OLD and NEW references are not available for table level triggers.
+
+C - You can use them for record level triggers.
+
+D - All of the above.
+
+Q18.
+Which of the following statement will create the specification for a package named cust_sal
+
+A -
+
+CREATE PACKAGE BODY cust_sal AS
+ PROCEDURE find_sal(c_id customers.id%type);
+END cust_sal;
+B -
+
+CREATE PACKAGE cust_sal AS
+ PROCEDURE find_sal(c_id customers.id%type);
+END cust_sal;
+C -
+
+CREATE PACKAGE SPECIFICATION cust_sal AS
+ PROCEDURE find_sal(c_id customers.id%type);
+END cust_sal;
+D -
+
+PACKAGE cust_sal AS
+ PROCEDURE find_sal(c_id customers.id%type);
+END cust_sal;
+
+Q19.
+What is the output of the following code?
+
+DECLARE
+   x number := 4;
+BEGIN
+   LOOP
+      dbms_output.put_line(x);
+      x := x + 1;
+      exit WHEN x > 5;
+   END LOOP;
+      dbms_output.put_line(x);
+END;
+A - 4
+
+     5
+
+     6
+
+B - 4
+
+     5
+
+C - 4
+
+D - None of the above.
+
+Q.20
+____ are declared automatically for DML and SELECT statements issued within a PL/SQL block.
+
+a. Implicit cursors
+
+b. Index-by Tables
+
+c. Assignment statements
+
+d. Collections
+
+Q.21
+____ are values passed into the cursor when opened and used in the SELECT statement of the cursor to determine what value it will contain.
+
+a. Collections
+
+b. Subqueries
+
+
+c. Parameters
+
+d. Variables
+
+Q22.
+Which collection exception is raised when a subscript exceeds the number of elements in a collection? 
+
+a. VALUE_ERROR
+b. COLLECTION_IS_NULL
+c. SUBSCRIPT_BEYOND_COUNT
+d. SUBSCRIPT_OUTSIDE_LIMIT
+
+Q23.
+ Nested tables can be sparse: you can delete arbitrary elements, rather than just removing an item from the end. 
+
+a. Yes
+b. No
+
+Q24.
+Which collection types is also known as index-by tables, lets you look up elements using arbitrary numbers and strings for subscript values? 
+
+
+a. Associative arrays
+b. Nested tables
+c. Varrays
+d. None of the above
+
+Q25.
+ Nested tables are a good choice when 
+
+a. The index values are not consecutive.
+b. There is no set number of index values. However, a maximum limit is imposed.
+c. You need to delete or update some elements, but not all the elements at once.
+d. You would usually create a separate lookup table, with multiple entries for each row of the main table, and access it through join queries.
+e. All mentioned above
+
+Q26.
+Any subprogram not in the package specification but coded in the package body is called a ___________ . 
+- Published on 08 Jul 15
+
+a. Public object
+b. Private object
+c. Both A & B
+d. None of the above
+
+Q27.
+Which select returns  information about schema objects to which the user has access through public or explicit grants of privileges and roles, 
+in addition to schema objects that the user owns.
+
+a. SELECT OWNER, OBJECT_NAME, OBJECT_TYPE
+FROM   DBA_OBJECTS
+ORDER BY OWNER, OBJECT_NAME;
+
+b.
+SELECT OWNER, OBJECT_NAME, OBJECT_TYPE 
+FROM   ALL_OBJECTS
+ORDER BY OWNER, OBJECT_NAME; 
+
+c.
+SELECT OWNER, OBJECT_NAME, OBJECT_TYPE 
+FROM   user_OBJECTS
+ORDER BY OWNER, OBJECT_NAME; 
+
+d. None of the above
+
+Q28.
+Which command you will issue to create a user by the name 'scott' and password 'tiger'?
+a. create scott identified by tiger;
+b. create user scott/tiger;
+c. create user scott@tiger;
+d. create user scott identified by tiger;
+
+Q29.
+Which system priviledge a newly created user requires to connect to the database ?
+a. create session
+b. connect database
+c. create_session
+d. None of the above
+
+Q30.
+A table has been dropped by 'hr'.
+Which command can be invoked to recover the dropped table >
+
+a. FLASHBACK TABLE HR.REG_HIST TO BEFORE DROP;
+b. recover TABLE HR.REG_HIST TO BEFORE DROP;
+c. recycle TABLE HR.REG_HIST TO BEFORE DROP;
+d. UNDO TABLE HR.REG_HIST TO BEFORE DROP;
+
+
+_____________________________________________________________________________________________________________
+
+Queries
+Max Marks : 40
+------------------------------------------------------------------------------------------------------------
+
+
+Q1. Write a query to print for each employee, employee_id, joining month, like 'JANUARY','MARCH' under the column heading
+    'Joining Month' and years elapsed since joining till date under the column heading 'Years Passed Since Joining'
+    sorted on the 2nd column of the output.
+
+Q2. For each employee concatenate the first_name with the last_name, with a space in between and padding the concatenated name
+    with '*', such that the length of each name is 50.The output should come under the column heading 'Full Name'.
+
+Q3. For each employee print employee_id,hire_date and the date exactly 10 years from joining.
+    The last column should be printed in the British format and under th heading '10 years after joining'.
+
+Q4. Write a query to print for each employee, employee_id,salary,department_id and the rank of the employee
+    as per salary under the employee's department.The last column should come under the heading 'Rank'.

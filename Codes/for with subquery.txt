@@ -1,0 +1,25 @@
+--Illustration of for loop with select
+begin
+   for emp_rec in (select employee_id,first_name,hire_date,salary
+         from employees
+         where department_id in
+          (
+            select department_id from departments
+            where location_id in
+            (
+              select location_id from locations
+              where country_id in
+               (
+                 select country_id from countries
+                 where country_name='United Kingdom'
+               )
+           )
+         )
+       )
+     loop
+       dbms_output.put_line('Employee ID :'||emp_rec.employee_id);
+       dbms_output.put_line('First Name :'||emp_rec.first_name);
+       dbms_output.put_line('Hire Date :'||emp_rec.hire_date);
+       dbms_output.put_line('Salary:'||emp_rec.salary);
+    end loop;
+   end;
